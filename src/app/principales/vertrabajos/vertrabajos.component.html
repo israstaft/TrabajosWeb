@@ -1,1 +1,208 @@
-<p>vertrabajos works!</p>
+<app-navbar></app-navbar>
+
+<div class="row">
+  <div class="col-xs-5">
+    <div class="form-group">
+      <h5 class="in">Busqueda avanzada</h5>
+      <input type="text" placeholder="Filtrar por ubicacion, posicion o compañía" class="form-control in2" 
+      name="filterPost">
+      <!-- [(ngModel)] = "filterPost" -->
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4 ml-4 mr-4">
+  <div class="card-body">
+    <h4>Trabajos</h4>
+    <div class="py-2">
+    </div>
+    <table class="table" >
+      <thead >
+        <tr>
+          <th scope="col">Ubicación</th>
+          <th scope="col">Posición</th>
+          <th scope="col">Compañía</th>
+          <th scope="col">Información</th>
+          <th scope="col" >Acciones</th>
+          <!-- *ngIf="AuthService.isAdminn || AuthService.isPoster" -->
+        </tr>
+      </thead>
+      <tbody >
+        <!-- *ngFor="let post of posts | filter:filterPost" -->
+        <tr>
+          <td></td>
+          <!-- {{post.ubicacion}} -->
+          <td></td>
+          <!-- {{post.posicion}} -->
+          <td></td>
+          <!-- {{post.compania}} -->
+          <td>
+            <button
+              class="btn btn-success"
+              data-toggle="modal"
+              data-target="#Modal"
+              
+            >
+            <!-- (click)="selectedPost(post)" -->
+              Ver Más
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-success"
+              data-toggle="modal"
+              data-target="#EditarModal"
+              
+            >
+            <!-- *ngIf="AuthService.isAdminn || AuthService.isPoster" -->
+            <!-- (click)="selectedPost(post)" -->
+              Editar
+            </button>
+            <button
+            class="btn btn-danger m-2"       
+          >
+          <!-- *ngIf="AuthService.isAdminn || AuthService.isPoster" -->
+          <!-- (click)="deletePost($event,post)" -->
+            eliminar
+          </button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal para Ver Informacion-->
+<div
+  class="modal fade"
+  id="Modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+<!-- *ngIf="borrador" -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Información del trabajo
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"></div>
+      <!-- {{borrador.descripcion}} -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Editar -->
+<div
+  class="modal fade"
+  id="EditarModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+<!-- *ngIf="borrador" -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar trabajo</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Seleccione la categoria</h5>
+        <select class="form-control form-control-sm">
+          <option>Software</option>
+          <option>Diseño</option>
+        </select>
+        <form >
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Ubicación</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Ingrese la Ubicación"
+              name="ubicacion"
+             
+            />
+            <!-- [(ngModel)]="borrador.ubicacion" -->
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Posición</label>
+            <input
+              type="email"
+              class="form-control"
+              
+              placeholder="Ingrese la Posición"
+              name="posicion"
+              
+            />
+            <!-- id="exampleFormControlInput1" -->
+            <!-- [(ngModel)]="borrador.posicion" -->
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Compañía</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Ingrese la Compañía"
+              name="compania"
+              
+            />
+            <!-- id="exampleFormControlInput1" -->
+            <!-- [(ngModel)]="borrador.compania" -->
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Descripción</label>
+            <textarea
+              class="form-control"
+              rows="4"
+              placeholder="Ingrese la Descripción del trabajo"
+              name="descripcion"
+              
+            ></textarea>
+            <!-- [(ngModel)]="borrador.descripcion" -->
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+        <!-- (click)="update()" -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Esta parte solo se activa si no existen trabajos de la categoria seleccionada -->
+<div class="container mt-4 mb-4">
+  <img
+    class="mx-auto d-block"
+    src="../../../assets/Vectors/undraw_working_from_anywhere_ub67.svg"
+    alt=""
+  />
+</div>
