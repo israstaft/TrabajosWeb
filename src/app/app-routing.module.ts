@@ -16,7 +16,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'regitro',
+    path: 'registro',
     component: RegistroComponent
   },
   {
@@ -27,8 +27,8 @@ const routes: Routes = [
     path: 'creartrabajos',
     component: CreartrabajosComponent
   },
-  {
-    path: 'verificacion-email',
+  {    path: 'verificacion-email',
+
     component: EnviarCorreoComponent
   }
 ];

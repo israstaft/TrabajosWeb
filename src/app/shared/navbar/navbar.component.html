@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg">
+  <h4 class="mr-4"><b>Works App</b></h4>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarText"
+    aria-controls="navbarText"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <!-- <span class="navbar-toggler-icon"></span> -->
+    <span>X </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a>Ver trabajos</a>
+        <!-- class="nav-link" routerLink="/vertrabajos" *ngIf="AuthService.isAdminn || AuthService.isPoster" -->
+      </li>
+      <li class="nav-item">
+        <a>Postear trabajos</a>
+        <!-- class="nav-link" routerLink="/creartrabajos" *ngIf="AuthService.isAdminn || AuthService.isPoster" -->
+      </li>
+    </ul>
+    <span class="navbar-text">
+      <a class="nav-link" type="button">Cerrar Sesion</a>
+      <!-- (click)="onLogout()" -->
+    </span>
+  </div>
+</nav>
+
